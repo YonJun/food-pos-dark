@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 // eslint-disable-next-line
-import tw, { styled, css } from "twin.macro";
+import tw, { styled, theme } from "twin.macro";
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 import { ButtonBase, SvgIcon } from "@material-ui/core";
@@ -19,17 +19,71 @@ import {
 
 const Li = styled.li`
   height: 12%;
-
-  ${tw` flex justify-center items-center`}
+  width: 100%;
+  /* border: 1px solid tomato; */
+  ${tw`flex justify-end`}
 
   path {
     ${tw`fill-current text-primary`}
   }
+
   .active {
-    ${tw`bg-primary rounded-xl`}
+    /* ${tw`bg-primary`} */
+    ${tw`bg-dark-1`}
     path {
       ${tw`fill-current text-white`}
     }
+  }
+  .active {
+    /* ${tw`bg-primary`} */
+    ${tw`bg-dark-1`}
+    path {
+      ${tw`fill-current text-white`}
+    }
+  }
+  .link {
+    border-radius: 17px 0 0 17px;
+    position: relative;
+  }
+
+  .link::after,
+  .link::before {
+    content: "";
+    position: absolute;
+    /* background-color: #0074d9; */
+    right: 0;
+    height: 50px;
+  }
+
+  .link::after {
+    top: -50px;
+
+    width: 0;
+    border-bottom-right-radius: 20px;
+    /* box-shadow: 0 40px 0 0 #001f3f; */
+    box-shadow: 0 0 0 0 ${theme`colors.dark-1`};
+  }
+  .link::before {
+    bottom: -50px;
+
+    width: 0;
+    border-top-right-radius: 20px;
+    /* box-shadow: 0 -40px 0 0 #001f3f; */
+    box-shadow: 0 0 0 0 ${theme`colors.dark-1`};
+  }
+  .active::before,
+  .active::after {
+    width: 15px;
+  }
+
+  .active::after {
+    box-shadow: 0 40px 0 0 ${theme`colors.dark-1`};
+  }
+  .active::before {
+    box-shadow: 0 -40px 0 0 ${theme`colors.dark-1`};
+  }
+  .active .item {
+    border: 1px solid tomato;
   }
 `;
 
@@ -37,8 +91,22 @@ const CustomLi = styled(Li)`
   height: 15%;
 `;
 
+const ItemContainer = styled.div`
+  width: 105px;
+  height: 100%;
+  /* border: 1px solid green; */
+
+  ${tw`p-5`}
+`;
+
 const Item = styled.div`
-  ${tw` text-white p-5  relative`}
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  display: block;
+  /* border: 1px solid pink; */
+  ${tw`text-white`}
 `;
 const CustomItem = styled.div`
   opacity: 0.2;
@@ -94,12 +162,22 @@ const Sidebar = () => {
 
         {ListLink.map(({ key, Icon, to }) => (
           <Li key={key}>
-            <NavLink exact to={to} activeClassName="active">
-              <ButtonBase tw="focus:outline-none">
-                <Item>
+            <NavLink
+              exact
+              to={to}
+              activeClassName="active"
+              className="link"
+              tw="hover:cursor-default">
+              {/* <ButtonBase tw="focus:outline-none"> */}
+              <ItemContainer>
+                {/* <Item>
+                  <SvgIcon component={Icon} />
+                </Item> */}
+                <Item className="item">
                   <SvgIcon component={Icon} />
                 </Item>
-              </ButtonBase>
+              </ItemContainer>
+              {/* </ButtonBase> */}
             </NavLink>
           </Li>
         ))}

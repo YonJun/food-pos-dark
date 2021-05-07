@@ -19,9 +19,8 @@ import {
 
 const Li = styled.li`
   height: 12%;
-  width: 100%;
   /* border: 1px solid tomato; */
-  ${tw`flex justify-end`}
+  ${tw`flex w-full justify-end`}
 
   path {
     ${tw`fill-current text-primary`}
@@ -35,12 +34,15 @@ const Li = styled.li`
     }
   }
   .active {
-    /* ${tw`bg-primary`} */
     ${tw`bg-dark-1`}
     path {
       ${tw`fill-current text-white`}
     }
   }
+  .active .item {
+    ${tw`bg-primary`}/* border: 1px solid tomato; */
+  }
+
   .link {
     border-radius: 17px 0 0 17px;
     position: relative;
@@ -50,25 +52,18 @@ const Li = styled.li`
   .link::before {
     content: "";
     position: absolute;
-    /* background-color: #0074d9; */
     right: 0;
     height: 50px;
   }
 
   .link::after {
     top: -50px;
-
-    width: 0;
     border-bottom-right-radius: 20px;
-    /* box-shadow: 0 40px 0 0 #001f3f; */
     box-shadow: 0 0 0 0 ${theme`colors.dark-1`};
   }
   .link::before {
     bottom: -50px;
-
-    width: 0;
     border-top-right-radius: 20px;
-    /* box-shadow: 0 -40px 0 0 #001f3f; */
     box-shadow: 0 0 0 0 ${theme`colors.dark-1`};
   }
   .active::before,
@@ -81,9 +76,6 @@ const Li = styled.li`
   }
   .active::before {
     box-shadow: 0 -40px 0 0 ${theme`colors.dark-1`};
-  }
-  .active .item {
-    border: 1px solid tomato;
   }
 `;
 
@@ -104,9 +96,8 @@ const Item = styled.div`
   height: 70px;
   line-height: 70px;
   text-align: center;
-  display: block;
   /* border: 1px solid pink; */
-  ${tw`text-white`}
+  ${tw`text-white rounded-xl  relative`}
 `;
 const CustomItem = styled.div`
   opacity: 0.2;
@@ -152,41 +143,31 @@ const Sidebar = () => {
     <Fragment>
       <ul tw="h-full bg-dark-2">
         <Li>
-          <ButtonBase tw="focus:outline-none">
+          <ItemContainer>
             <Item>
               <CustomItem />
               <SvgIcon component={Restaurant} />
             </Item>
-          </ButtonBase>
+          </ItemContainer>
         </Li>
 
         {ListLink.map(({ key, Icon, to }) => (
           <Li key={key}>
-            <NavLink
-              exact
-              to={to}
-              activeClassName="active"
-              className="link"
-              tw="hover:cursor-default">
-              {/* <ButtonBase tw="focus:outline-none"> */}
+            <NavLink exact to={to} activeClassName="active" className="link">
               <ItemContainer>
-                {/* <Item>
-                  <SvgIcon component={Icon} />
-                </Item> */}
                 <Item className="item">
                   <SvgIcon component={Icon} />
                 </Item>
               </ItemContainer>
-              {/* </ButtonBase> */}
             </NavLink>
           </Li>
         ))}
         <CustomLi>
-          <ButtonBase tw="focus:outline-none">
+          <ItemContainer>
             <Item>
               <SvgIcon component={LogOut} />
             </Item>
-          </ButtonBase>
+          </ItemContainer>
         </CustomLi>
       </ul>
     </Fragment>

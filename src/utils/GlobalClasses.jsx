@@ -3,10 +3,10 @@
 import tw, { styled } from "twin.macro";
 import { Fragment } from "react";
 const Container = styled.div`
-  h1 {
+  .h1 {
     ${tw`text-3xl `}
   }
-  h2 {
+  .h2 {
     ${tw`text-2xl `}
   }
   .title {

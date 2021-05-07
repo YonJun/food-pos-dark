@@ -6,8 +6,8 @@ import { Fragment } from "react";
 const Home = () => {
   return (
     <Fragment>
-      <h1>h1. Typography</h1>
-      <h2>h1. Typography</h2>
+      <p className="h1">h1. Typography</p>
+      <p className="h2">h2. Typography</p>
       <p className="title">title-1. Typography</p>
       <p className="body">body-1. Typography</p>
       <p className="caption">caption. Typography</p>

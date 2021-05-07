@@ -6,7 +6,7 @@ import { Fragment } from "react";
 const Home = () => {
   return (
     <Fragment>
-      <div tw="pt-5">Home</div>
+      <h1>h1. Typography</h1>
     </Fragment>
   );
 };

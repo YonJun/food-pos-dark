@@ -26,7 +26,7 @@ const Router = () => {
         </Nav>
 
         <Main>
-          <div tw="container mx-auto px-4 text-white">
+          <div tw="container mx-auto px-4 ">
             <Switch>
               <Route exact path="/">
                 <Home />

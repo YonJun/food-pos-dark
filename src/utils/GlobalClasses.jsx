@@ -4,7 +4,21 @@ import tw, { styled } from "twin.macro";
 import { Fragment } from "react";
 const Container = styled.div`
   h1 {
-    ${tw`text-white text-3xl `}
+    ${tw`text-3xl `}
+  }
+  h2 {
+    ${tw`text-2xl `}
+  }
+  .title {
+    font-size: 16px;
+  }
+
+  .body {
+    font-size: 14px;
+  }
+
+  .caption {
+    ${tw`text-xs `}
   }
 `;
 const GlobalClasses = ({ children }) => {

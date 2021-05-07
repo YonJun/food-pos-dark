@@ -1,38 +1,20 @@
 /** @jsxImportSource @emotion/react */
 // eslint-disable-next-line
-import tw, { styled, theme } from "twin.macro";
+import tw, { styled, css } from "twin.macro";
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
-import { SvgIcon } from "@material-ui/core";
+import { ButtonBase, SvgIcon } from "@material-ui/core";
 
 //Icons
 import {
-  AboutUs,
-  Add,
-  Appereance,
-  ArrowDown,
-  ArrowUp,
-  Back,
-  Card,
-  Coin,
-  Customer,
   Dashboard,
   Discount,
-  Edit,
-  Export,
   Home,
   LogOut,
   Message,
   Notification,
-  Option,
-  Order,
-  Paypal,
-  Print,
   Restaurant,
-  Security,
   Setting,
-  Trash,
-  Wallet,
 } from "constants/icons";
 
 const Li = styled.li`
@@ -102,25 +84,31 @@ const Sidebar = () => {
     <Fragment>
       <ul tw="h-full bg-dark-2">
         <Li>
-          <Item>
-            <CustomItem />
-            <SvgIcon component={Restaurant} />
-          </Item>
+          <ButtonBase tw="focus:outline-none">
+            <Item>
+              <CustomItem />
+              <SvgIcon component={Restaurant} />
+            </Item>
+          </ButtonBase>
         </Li>
 
         {ListLink.map(({ key, Icon, to }) => (
           <Li key={key}>
             <NavLink exact to={to} activeClassName="active">
-              <Item>
-                <SvgIcon component={Icon} />
-              </Item>
+              <ButtonBase tw="focus:outline-none">
+                <Item>
+                  <SvgIcon component={Icon} />
+                </Item>
+              </ButtonBase>
             </NavLink>
           </Li>
         ))}
         <CustomLi>
-          <Item>
-            <SvgIcon component={LogOut} />
-          </Item>
+          <ButtonBase tw="focus:outline-none">
+            <Item>
+              <SvgIcon component={LogOut} />
+            </Item>
+          </ButtonBase>
         </CustomLi>
       </ul>
     </Fragment>

@@ -1,12 +1,53 @@
 /** @jsxImportSource @emotion/react */
 // eslint-disable-next-line
-import tw from "twin.macro";
-export const H1 = ({ children }) => (
-  <p tw="text-h1 font-semibold">{children}</p>
+import tw, { css } from "twin.macro";
+export const H1 = ({ children, gutterBottom = false }) => (
+  <p
+    css={[
+      tw`text-h1 font-semibold`, // Add base styles first
+      (gutterBottom !== undefined && gutterBottom !== false) === true &&
+        tw`mb-1`,
+    ]}>
+    {children}
+  </p>
 );
-export const H2 = ({ children }) => <p tw="text-h2 font-medium">{children}</p>;
-export const Title = ({ children }) => (
-  <p tw="text-title font-normal  ">{children}</p>
+export const H2 = ({ children, gutterBottom = false }) => (
+  <p
+    css={[
+      tw`text-h2 font-medium`, // Add base styles first
+      (gutterBottom !== undefined && gutterBottom !== false) === true &&
+        tw`mb-1`,
+    ]}>
+    {children}
+  </p>
 );
-export const Body = ({ children }) => <p tw="text-body">{children}</p>;
-export const Caption = ({ children }) => <p tw="text-caption">{children}</p>;
+export const Title = ({ children, gutterBottom = false }) => (
+  <p
+    css={[
+      tw`text-title font-normal`, // Add base styles first
+      (gutterBottom !== undefined && gutterBottom !== false) === true &&
+        tw`mb-1`,
+    ]}>
+    {children}
+  </p>
+);
+export const Body = ({ children, gutterBottom = false }) => (
+  <p
+    css={[
+      tw`text-body`, // Add base styles first
+      (gutterBottom !== undefined && gutterBottom !== false) === true &&
+        tw`mb-1`,
+    ]}>
+    {children}
+  </p>
+);
+export const Caption = ({ children, gutterBottom = false }) => (
+  <p
+    css={[
+      tw`text-caption`, // Add base styles first
+      (gutterBottom !== undefined && gutterBottom !== false) === true &&
+        tw`mb-1`,
+    ]}>
+    {children}
+  </p>
+);

@@ -295,6 +295,11 @@ module.exports = {
       ],
     },
     fontSize: {
+      h1: ["1.875rem", { lineHeight: "2.25rem" }],
+      h2: ["1.5rem", { lineHeight: "2rem" }],
+      title: ["1rem", { lineHeight: "1.5rem" }],
+      body: ["0.87rem", { lineHeight: "1.2rem" }],
+      caption: ["0.75rem", { lineHeight: "1rem" }],
       xs: ["0.75rem", { lineHeight: "1rem" }],
       sm: ["0.875rem", { lineHeight: "1.25rem" }],
       base: ["1rem", { lineHeight: "1.5rem" }],

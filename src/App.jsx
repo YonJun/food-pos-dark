@@ -4,7 +4,6 @@ import { ThemeProvider } from "@emotion/react";
 import { createMuiTheme } from "@material-ui/core/styles";
 import Router from "./router";
 import THEME from "./theme";
-import GlobalClasses from "utils/GlobalClasses";
 
 const theme = createMuiTheme({
   palette: {
@@ -25,9 +24,7 @@ const theme = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalClasses>
-        <Router />
-      </GlobalClasses>
+      <Router />
     </ThemeProvider>
   );
 }

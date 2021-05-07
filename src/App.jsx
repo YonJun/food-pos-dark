@@ -1,3 +1,4 @@
+import "./App.css";
 import { ThemeProvider } from "@emotion/react";
 
 import { createMuiTheme } from "@material-ui/core/styles";

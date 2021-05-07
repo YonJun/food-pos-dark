@@ -3,7 +3,7 @@
 import tw, { styled, theme } from "twin.macro";
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
-import { ButtonBase, SvgIcon } from "@material-ui/core";
+import { SvgIcon } from "@material-ui/core";
 
 //Icons
 import {
@@ -18,7 +18,7 @@ import {
 } from "constants/icons";
 
 const Li = styled.li`
-  height: 12%;
+  height: 110px;
   /* border: 1px solid tomato; */
   ${tw`flex w-full justify-end`}
 

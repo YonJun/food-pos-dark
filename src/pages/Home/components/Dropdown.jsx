@@ -8,7 +8,7 @@ import { Body } from "components/Typography";
 import { ArrowIosDown } from "constants/icons";
 
 const Input = styled.div`
-  ${tw`bg-dark-2 hover:cursor-pointer p-3 pt-4  rounded-xl flex`}
+  ${tw`bg-dark-2 hover:cursor-pointer p-3 pt-4  rounded-xl flex border border-dark-line`}
 `;
 const MItem = styled(MenuItem)`
   &.MuiMenuItem-root {
@@ -54,13 +54,13 @@ export default function Dropdown() {
           horizontal: "center",
         }}>
         <MItem dense onClick={handleClose}>
-          Profile
+          Option 1
         </MItem>
         <MItem dense onClick={handleClose}>
-          My account
+          Option 2
         </MItem>
         <MItem dense onClick={handleClose}>
-          Logout
+          Option 3
         </MItem>
       </PopoverStyled>
     </div>

@@ -10,6 +10,16 @@ const theme = createMuiTheme({
       variant: "outlined",
     },
   },
+  overrides: {
+    MuiTab: {
+      root: {
+        padding: 0,
+      },
+      wrapper: {
+        alignItems: "flex-start",
+      },
+    },
+  },
   palette: {
     primary: {
       main: THEME.primary.main,

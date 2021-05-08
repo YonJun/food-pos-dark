@@ -7,11 +7,15 @@ import TxtField from "components/TxtField";
 //icons
 import SearchIcon from "@material-ui/icons/Search";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import TabsContainer from "./layouts/TabsContainer";
 
 const Home = () => {
   return (
     <Fragment>
       <div tw="pt-10">
+        {
+          //header
+        }
         <div tw="flex justify-between items-center">
           <div>
             <H1 gutterBottom>Jaegar Resto</H1>
@@ -31,8 +35,11 @@ const Home = () => {
           </div>
         </div>
         {
-          //header
+          //Body
         }
+        <div tw="mt-10">
+          <TabsContainer />
+        </div>
       </div>
     </Fragment>
   );

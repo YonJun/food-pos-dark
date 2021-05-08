@@ -6,10 +6,8 @@ import Sidebar from "../layouts/Sidebar";
 import Dashboard from "../pages/Dashboard";
 import Home from "../pages/Home";
 import Settings from "../pages/Settings";
+import { FixedGridPanel } from "components/FixedGridPanel";
 
-const Nav = styled.nav`
-  ${tw`w-full sticky top-0  h-screen overflow-y-auto  bg-dark-2`}
-`;
 const Main = styled.div`
   /* margin-left: 140px; */
 `;
@@ -24,12 +22,14 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Container tw="w-full bg-dark-1">
-        <Nav>
-          <Sidebar />
-        </Nav>
+        <FixedGridPanel>
+          <nav tw="bg-dark-2 h-screen">
+            <Sidebar />
+          </nav>
+        </FixedGridPanel>
 
         <Main>
-          <div tw="container mx-auto px-4 text-white">
+          <div tw="text-white">
             <Switch>
               <Route exact path="/">
                 <Home />

@@ -21,9 +21,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  padding: {
-    padding: theme.spacing(3),
-  },
   demo1: {
     backgroundColor: theme.palette.background.paper,
   },
@@ -71,7 +68,6 @@ export default function TabsContainer() {
           />
         ))}
       </StyledTabs>
-      <Typography className={classes.padding} />
     </div>
   );
 }

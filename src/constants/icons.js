@@ -24,6 +24,8 @@ import { ReactComponent as Security } from "assets/Icon/Line/Security.svg";
 import { ReactComponent as Setting } from "assets/Icon/Line/Setting.svg";
 import { ReactComponent as Trash } from "assets/Icon/Line/Trash.svg";
 import { ReactComponent as Wallet } from "assets/Icon/Line/Wallet.svg";
+import { ReactComponent as ArrowIosDown } from "assets/Icon/Line/arrow-ios-down.svg";
+
 export {
   AboutUs,
   Add,
@@ -51,4 +53,5 @@ export {
   Setting,
   Trash,
   Wallet,
+  ArrowIosDown,
 };

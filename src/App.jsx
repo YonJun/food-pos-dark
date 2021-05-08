@@ -1,11 +1,15 @@
 import "./App.css";
-import { ThemeProvider } from "@emotion/react";
-
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Router from "./router";
 import THEME from "./theme";
 
 const theme = createMuiTheme({
+  props: {
+    MuiTextField: {
+      // size: "small",
+      variant: "outlined",
+    },
+  },
   palette: {
     primary: {
       main: THEME.primary.main,

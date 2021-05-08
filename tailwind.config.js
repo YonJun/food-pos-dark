@@ -29,6 +29,12 @@ module.exports = {
 
       "dark-1": THEME.base.dark1,
       "dark-2": THEME.base.dark2,
+      "form-bg": THEME.base.formBg,
+
+      tdark: THEME.text.dark,
+      tgray: THEME.text.gray,
+      tlight: THEME.text.light,
+      tlighter: THEME.text.lighter,
 
       black: colors.black,
       white: colors.white,

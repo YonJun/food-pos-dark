@@ -14,5 +14,12 @@ module.exports = {
   base: {
     dark1: "#252836",
     dark2: "#1F1D2B",
+    formBg: "#2D303E",
+  },
+  text: {
+    dark: "#3B5162",
+    gray: "#889898",
+    light: "#ABBBC2",
+    lighter: "#E0E6E9",
   },
 };

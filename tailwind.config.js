@@ -30,6 +30,7 @@ module.exports = {
       "dark-1": THEME.base.dark1,
       "dark-2": THEME.base.dark2,
       "form-bg": THEME.base.formBg,
+      "dark-line": THEME.base.darkLine,
 
       tdark: THEME.text.dark,
       tgray: THEME.text.gray,

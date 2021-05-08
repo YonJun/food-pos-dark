@@ -14,6 +14,7 @@ module.exports = {
   base: {
     dark1: "#252836",
     dark2: "#1F1D2B",
+    darkLine: "#393C49",
     formBg: "#2D303E",
   },
   text: {

@@ -5,7 +5,12 @@ import { TextField } from "@material-ui/core";
 
 const TxtField = styled(TextField)`
   background-color: ${theme`colors.form-bg`};
-  border-radius: 5px;
+  border-radius: 8px;
+
+  fieldset {
+    border-radius: 8px;
+    border-color: ${theme`colors.dark-line`};
+  }
   .MuiInputBase-input {
     color: ${theme`colors.tlighter`};
     ::placeholder,

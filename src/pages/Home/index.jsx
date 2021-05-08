@@ -4,6 +4,9 @@ import tw from "twin.macro";
 import { Fragment } from "react";
 import { H1, Title } from "components/Typography";
 import TxtField from "components/TxtField";
+//icons
+import SearchIcon from "@material-ui/icons/Search";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 const Home = () => {
   return (
@@ -15,7 +18,16 @@ const Home = () => {
             <Title tw="text-tlighter">Tuesday, 2 Feb 2021</Title>
           </div>
           <div>
-            <TxtField placeholder="Search for food, coffe, etc.." />
+            <TxtField
+              placeholder="Search for food, coffe, etc.."
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon tw="text-white" />
+                  </InputAdornment>
+                ),
+              }}
+            />
           </div>
         </div>
         {

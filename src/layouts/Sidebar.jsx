@@ -141,7 +141,7 @@ const ListLink = [
 const Sidebar = () => {
   return (
     <Fragment>
-      <ul tw="h-full bg-dark-2">
+      <ul tw="h-full">
         <Li>
           <ItemContainer>
             <Item>

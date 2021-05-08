@@ -8,7 +8,7 @@ import Home from "../pages/Home";
 import Settings from "../pages/Settings";
 
 const Nav = styled.nav`
-  ${tw`w-full sticky top-0 h-screen overflow-y-auto`}
+  ${tw`w-full sticky top-0  h-screen overflow-y-auto  bg-dark-2`}
 `;
 const Main = styled.div`
   /* margin-left: 140px; */

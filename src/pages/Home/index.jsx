@@ -10,57 +10,60 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import TabsContainer from "./layouts/TabsContainer";
 import Dropdown from "./components/Dropdown";
 import ProductList from "./layouts/ProductList";
-
-const TopContainer = styled.div`
-  height: 32vh;
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: 800px 300px;
+  grid-gap: 20px;
 `;
-const ListContainer = styled.div`
-  height: auto;
-  max-height: 68vh;
-`;
-
 const Home = () => {
   return (
     <Fragment>
-      <div>
-        <TopContainer tw="pt-10">
-          {
-            //header
-          }
-          <div tw="flex justify-between items-center">
-            <div>
-              <H1 gutterBottom>Jaegar Resto</H1>
-              <Title tw="text-tlighter">Tuesday, 2 Feb 2021</Title>
+      <div tw="w-full flex justify-center">
+        <Container>
+          <div>
+            <div tw="pt-10 sticky top-0 bg-dark-1">
+              {
+                //header
+              }
+              <div tw="flex justify-between items-center">
+                <div>
+                  <H1 gutterBottom>Jaegar Resto</H1>
+                  <Title tw="text-tlighter">Tuesday, 2 Feb 2021</Title>
+                </div>
+                <div>
+                  <TxtField
+                    placeholder="Search for food, coffe, etc.."
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <SearchIcon tw="text-white" />
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                </div>
+              </div>
+              {
+                //Body
+              }
+              <div tw="mt-5">
+                <TabsContainer />
+              </div>
+              <div tw="mt-10">
+                <div tw="flex justify-between items-center">
+                  <H2>Choose Dishes</H2>
+                  <Dropdown />
+                </div>
+              </div>
             </div>
-            <div>
-              <TxtField
-                placeholder="Search for food, coffe, etc.."
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <SearchIcon tw="text-white" />
-                    </InputAdornment>
-                  ),
-                }}
-              />
+            <div tw="py-10">
+              <ProductList />
             </div>
           </div>
-          {
-            //Body
-          }
-          <div tw="mt-5">
-            <TabsContainer />
+          <div tw="flex pt-5 flex-col flex-1 sticky top-0 h-screen  overflow-y-auto">
+            drawer
           </div>
-          <div tw="mt-10">
-            <div tw="flex justify-between items-center">
-              <H2>Choose Dishes</H2>
-              <Dropdown />
-            </div>
-          </div>
-        </TopContainer>
-        <ListContainer tw="overflow-y-auto py-10">
-          <ProductList />
-        </ListContainer>
+        </Container>
       </div>
     </Fragment>
   );

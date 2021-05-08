@@ -8,19 +8,22 @@ import Home from "../pages/Home";
 import Settings from "../pages/Settings";
 
 const Nav = styled.nav`
-  width: 140px;
-  z-index: 1;
-  overflow-x: hidden;
-  ${tw`h-full fixed top-0 left-0 bg-dark-2`}
+  ${tw`w-full sticky top-0 h-screen overflow-y-auto`}
 `;
-const Main = styled.nav`
-  margin-left: 140px;
+const Main = styled.div`
+  /* margin-left: 140px; */
+`;
+
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: 120px auto;
+  grid-gap: 20px;
 `;
 
 const Router = () => {
   return (
     <BrowserRouter>
-      <div tw="w-screen h-screen bg-dark-1">
+      <Container tw="w-full bg-dark-1">
         <Nav>
           <Sidebar />
         </Nav>
@@ -40,7 +43,7 @@ const Router = () => {
             </Switch>
           </div>
         </Main>
-      </div>
+      </Container>
     </BrowserRouter>
   );
 };

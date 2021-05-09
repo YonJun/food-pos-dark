@@ -64,9 +64,7 @@ const Home = () => {
           </div>
         </div>
         <FixedGridPanel tw="bg-dark-2">
-          <div tw="p-5">
-            <Orders />
-          </div>
+          <Orders />
         </FixedGridPanel>
       </Container>
     </Fragment>

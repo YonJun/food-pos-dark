@@ -45,7 +45,7 @@ const OrderResult = ({ img, title, price, qty }) => {
         </div>
 
         <IconButton>
-          <SvgIcon color="primary" component={Trash} />
+          <SvgIcon component={Trash} />
         </IconButton>
       </Grid2Cols>
     </Fragment>

@@ -2,15 +2,25 @@
 // eslint-disable-next-line
 import { ButtonBase } from "@material-ui/core";
 import tw, { styled } from "twin.macro";
-const Btn = styled.div`
-  ${tw`box-border	 border-2 border-primary rounded-lg `}
-  text-align:center;
+
+const TemplateBtn = styled.div`
+  text-align: center;
   line-height: 45px;
   width: 55px;
   height: 55px;
+`;
+const Btn = styled(TemplateBtn)`
+  ${tw`box-border	 border-2 border-primary rounded-lg `}
 
   path {
     ${tw`fill-current text-primary`}
+  }
+`;
+const BtnFilled = styled(TemplateBtn)`
+  ${tw`bg-primary rounded-lg `}
+
+  path {
+    ${tw`fill-current text-white`}
   }
 `;
 const BaseBtn = styled(ButtonBase)`
@@ -24,6 +34,15 @@ const IconButton = ({ children }) => {
     <div>
       <BaseBtn>
         <Btn>{children}</Btn>
+      </BaseBtn>
+    </div>
+  );
+};
+export const IconButtonFilled = ({ children }) => {
+  return (
+    <div>
+      <BaseBtn>
+        <BtnFilled>{children}</BtnFilled>
       </BaseBtn>
     </div>
   );

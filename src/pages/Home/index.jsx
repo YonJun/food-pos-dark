@@ -1,23 +1,43 @@
 /** @jsxImportSource @emotion/react */
 // eslint-disable-next-line
 import tw, { styled } from "twin.macro";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { H1, H2, Title } from "components/Typography";
 import TxtField from "components/TxtField";
-//icons
-import SearchIcon from "@material-ui/icons/Search";
-import InputAdornment from "@material-ui/core/InputAdornment";
 import TabsContainer from "./layouts/TabsContainer";
 import Dropdown from "./components/Dropdown";
 import ProductList from "./layouts/ProductList";
 import { FixedGridPanel } from "components/FixedGridPanel";
-import Orders from "./layouts/Orders";
+import { Orders, PayOrder } from "./layouts/Orders";
+import { Drawer } from "@material-ui/core";
+//icons
+import SearchIcon from "@material-ui/icons/Search";
+import InputAdornment from "@material-ui/core/InputAdornment";
 const Container = styled.div`
   display: grid;
   grid-template-columns: auto 500px;
   grid-gap: 20px;
 `;
+const DrawerWrapper = styled.div`
+  width: 1000px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto 500px;
+  ${tw`bg-dark-2`}
+`;
 const Home = () => {
+  const [isOpen, set_isOpen] = useState(false);
+
+  const toggleDrawer = (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    set_isOpen(false);
+  };
   return (
     <Fragment>
       <Container>
@@ -64,9 +84,21 @@ const Home = () => {
           </div>
         </div>
         <FixedGridPanel tw="bg-dark-2">
-          <Orders />
+          <Orders onContinueToPay={() => set_isOpen(true)} />
         </FixedGridPanel>
       </Container>
+      <Drawer anchor="right" open={isOpen} onClose={toggleDrawer}>
+        <FixedGridPanel tw="bg-dark-2 text-white">
+          <DrawerWrapper>
+            <div>
+              <PayOrder />
+            </div>
+            <div tw="border-l-2 border-dark-line ">
+              <PayOrder />
+            </div>
+          </DrawerWrapper>
+        </FixedGridPanel>
+      </Drawer>
     </Fragment>
   );
 };

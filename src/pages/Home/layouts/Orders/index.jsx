@@ -3,11 +3,11 @@
 import tw, { styled } from "twin.macro";
 import { Title, H2, H1, Body } from "components/Typography";
 import { Fragment } from "react";
-import { Button, IconButton, SvgIcon } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import { Grid3Cols } from "components/GridCustomCols";
 import OrderResult from "components/OrderResult";
 import { FixedGridPanel } from "components/FixedGridPanel";
-import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
+
 import AddIcon from "@material-ui/icons/Add";
 import { IconButtonFilled } from "components/IconButton";
 
@@ -100,9 +100,6 @@ export const PayOrder = () => {
     <Base
       header={
         <>
-          <IconButton>
-            <KeyboardBackspaceIcon tw="text-white" fontSize="large" />
-          </IconButton>
           <div tw="flex justify-between items-center">
             <div>
               <H1 gutterBottom>Confirmation</H1>

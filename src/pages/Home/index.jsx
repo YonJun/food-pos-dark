@@ -10,14 +10,19 @@ import ProductList from "./layouts/ProductList";
 import { FixedGridPanel } from "components/FixedGridPanel";
 import { Orders, PayOrder } from "./layouts/Orders";
 import { Drawer } from "@material-ui/core";
+import Paymant from "./layouts/Paymant";
+import { IconButton } from "@material-ui/core";
 //icons
 import SearchIcon from "@material-ui/icons/Search";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
+
 const Container = styled.div`
   display: grid;
   grid-template-columns: auto 500px;
   grid-gap: 20px;
 `;
+
 const DrawerContent = styled.div`
   width: 1000px;
   height: 100%;
@@ -25,6 +30,7 @@ const DrawerContent = styled.div`
   grid-template-columns: auto 500px;
   ${tw`bg-dark-2`}
 `;
+
 const Home = () => {
   const [isOpen, set_isOpen] = useState(false);
 
@@ -88,18 +94,20 @@ const Home = () => {
         </FixedGridPanel>
       </Container>
       <Drawer anchor="right" open={isOpen} onClose={toggleDrawer}>
-        <FixedGridPanel tw="bg-dark-2 text-white">
-          <DrawerContent>
-            <div>
-              <PayOrder />
+        <DrawerContent tw="bg-dark-2 text-white">
+          <FixedGridPanel>
+            <div tw="px-5 mt-5 h-16	">
+              <IconButton onClick={toggleDrawer}>
+                <KeyboardBackspaceIcon tw="text-white" fontSize="large" />
+              </IconButton>
             </div>
-            <div tw="border-l-2 border-dark-line ">
-              <div>
-                <Dropdown fullWidth={true} />
-              </div>
-            </div>
-          </DrawerContent>
-        </FixedGridPanel>
+            <PayOrder />
+          </FixedGridPanel>
+          <div tw="border-l-2 border-dark-line ">
+            <div tw="mt-5 h-16	" />
+            <Paymant />
+          </div>
+        </DrawerContent>
       </Drawer>
     </Fragment>
   );

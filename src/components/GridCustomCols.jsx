@@ -12,5 +12,5 @@ export const Grid3Cols = styled(BaseGrid)`
 `;
 
 export const Grid2Cols = styled(BaseGrid)`
-  grid-template-columns: auto 80px;
+  grid-template-columns: auto 50px;
 `;

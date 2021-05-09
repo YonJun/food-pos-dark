@@ -2,12 +2,49 @@ import "./App.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Router from "./router";
 import THEME from "./theme";
+import { GlobalStyles } from "twin.macro";
 
 const theme = createMuiTheme({
   props: {
+    MuiButton: {
+      size: "small",
+    },
+    MuiFilledInput: {
+      margin: "dense",
+    },
+    MuiFormControl: {
+      margin: "dense",
+    },
+    MuiFormHelperText: {
+      margin: "dense",
+    },
+    MuiIconButton: {
+      size: "small",
+    },
+    MuiInputBase: {
+      margin: "dense",
+    },
+    MuiInputLabel: {
+      margin: "dense",
+    },
+    MuiListItem: {
+      dense: true,
+    },
+    MuiOutlinedInput: {
+      margin: "dense",
+    },
+    MuiFab: {
+      size: "small",
+    },
+    MuiTable: {
+      size: "small",
+    },
     MuiTextField: {
-      // size: "small",
+      margin: "dense",
       variant: "outlined",
+    },
+    MuiToolbar: {
+      variant: "dense",
     },
   },
   overrides: {
@@ -17,6 +54,11 @@ const theme = createMuiTheme({
       },
       wrapper: {
         alignItems: "flex-start",
+      },
+    },
+    MuiButton: {
+      root: {
+        textTransform: "none",
       },
     },
   },
@@ -38,6 +80,8 @@ const theme = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyles />
+
       <Router />
     </ThemeProvider>
   );

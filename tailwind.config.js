@@ -5,6 +5,9 @@ module.exports = {
   purge: [],
   presets: [],
   darkMode: false, // or 'media' or 'class'
+  corePlugins: {
+    outline: false,
+  },
   theme: {
     screens: {
       sm: "640px",

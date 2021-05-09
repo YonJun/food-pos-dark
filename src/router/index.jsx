@@ -16,6 +16,9 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 120px auto;
   grid-gap: 20px;
+  button:focus {
+    outline: none;
+  }
 `;
 
 const Router = () => {

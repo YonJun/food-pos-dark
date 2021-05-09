@@ -1,5 +1,5 @@
-import "tailwindcss/dist/base.min.css";
-import React from "react";
+// simport "tailwindcss/dist/base.min.css";
+import "./index.css";
 import ReactDOM from "react-dom";
 import App from "./App";
 

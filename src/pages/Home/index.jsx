@@ -18,7 +18,7 @@ const Container = styled.div`
   grid-template-columns: auto 500px;
   grid-gap: 20px;
 `;
-const DrawerWrapper = styled.div`
+const DrawerContent = styled.div`
   width: 1000px;
   height: 100%;
   display: grid;
@@ -89,14 +89,16 @@ const Home = () => {
       </Container>
       <Drawer anchor="right" open={isOpen} onClose={toggleDrawer}>
         <FixedGridPanel tw="bg-dark-2 text-white">
-          <DrawerWrapper>
+          <DrawerContent>
             <div>
               <PayOrder />
             </div>
             <div tw="border-l-2 border-dark-line ">
-              <PayOrder />
+              <div>
+                <Dropdown fullWidth={true} />
+              </div>
             </div>
-          </DrawerWrapper>
+          </DrawerContent>
         </FixedGridPanel>
       </Drawer>
     </Fragment>

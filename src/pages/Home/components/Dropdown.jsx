@@ -8,7 +8,9 @@ import { Body } from "components/Typography";
 import { ArrowIosDown } from "constants/icons";
 
 const Input = styled.div`
-  ${tw`bg-dark-2 hover:cursor-pointer p-3 pt-4  rounded-xl flex border border-dark-line`}
+  ${tw`bg-dark-2 hover:cursor-pointer p-3 pt-4  rounded-xl border border-dark-line inline-block`}
+
+  ${({ fullWidth }) => !!fullWidth && tw`block`}
 `;
 const MItem = styled(MenuItem)`
   &.MuiMenuItem-root {
@@ -20,7 +22,7 @@ const PopoverStyled = styled(Popover)`
     ${tw`bg-dark-2`}
   }
 `;
-export default function Dropdown() {
+export default function Dropdown({ fullWidth = false }) {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -35,11 +37,13 @@ export default function Dropdown() {
   const id = open ? "simple-popover" : undefined;
 
   return (
-    <div>
-      <Input onClick={handleClick}>
-        <SvgIcon component={ArrowIosDown} />
-        <Body tw="pl-2 ">Dine In</Body>
-      </Input>
+    <>
+      <div>
+        <Input onClick={handleClick} fullWidth={fullWidth}>
+          <SvgIcon component={ArrowIosDown} />
+          <Body tw="pl-2 inline-block ">Dine In</Body>
+        </Input>
+      </div>
       <PopoverStyled
         id={id}
         open={open}
@@ -63,6 +67,6 @@ export default function Dropdown() {
           Option 3
         </MItem>
       </PopoverStyled>
-    </div>
+    </>
   );
 }

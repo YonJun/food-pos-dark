@@ -12,27 +12,27 @@ const theme = createMuiTheme({
     MuiFilledInput: {
       margin: "dense",
     },
-    MuiFormControl: {
-      margin: "dense",
-    },
+    // MuiFormControl: {
+    //   margin: "dense",
+    // },
     MuiFormHelperText: {
       margin: "dense",
     },
     MuiIconButton: {
       size: "small",
     },
-    MuiInputBase: {
-      margin: "dense",
-    },
+    // MuiInputBase: {
+    //   margin: "dense",
+    // },
     MuiInputLabel: {
       margin: "dense",
     },
     MuiListItem: {
       dense: true,
     },
-    MuiOutlinedInput: {
-      margin: "dense",
-    },
+    // MuiOutlinedInput: {
+    //   margin: "dense",
+    // },
     MuiFab: {
       size: "small",
     },
@@ -40,7 +40,8 @@ const theme = createMuiTheme({
       size: "small",
     },
     MuiTextField: {
-      margin: "dense",
+      // margin: "dense",
+      // size: "small",
       variant: "outlined",
     },
     MuiToolbar: {

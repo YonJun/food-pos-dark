@@ -4,15 +4,8 @@ import tw, { styled } from "twin.macro";
 import { Title, H2 } from "components/Typography";
 import { Fragment } from "react";
 import { Button } from "@material-ui/core";
-
-const BaseGrid = styled.div`
-  display: grid;
-
-  grid-gap: 20px;
-`;
-const Grid3Cols = styled(BaseGrid)`
-  grid-template-columns: auto 50px 50px;
-`;
+import { Grid3Cols } from "components/GridCustomCols";
+import OrderResult from "components/OrderResult";
 
 const Orders = () => {
   return (
@@ -30,14 +23,19 @@ const Orders = () => {
             Dine In
           </Button>
         </div>
-        <div tw="my-7">
+        <div tw="mt-7">
           <Grid3Cols>
             <Title>Item</Title>
             <Title>Qty</Title>
             <Title>Price</Title>
           </Grid3Cols>
         </div>
-        <hr tw="border-dark-line" />
+        <hr tw="my-7 border-dark-line" />
+        <div tw="space-y-6">
+          {[...new Array(5).keys()].map((i) => (
+            <OrderResult key={i} />
+          ))}
+        </div>
       </div>
     </Fragment>
   );

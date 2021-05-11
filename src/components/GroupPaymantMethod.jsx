@@ -8,7 +8,7 @@ import { Paypal, Card, Wallet } from "constants/icons";
 
 const Item = styled.div`
   min-width: 120px;
-  ${tw`py-2 px-5 flex flex-col items-center justify-center border border-dark-line rounded-lg text-tlight `}
+  ${tw`py-2 px-5 flex flex-col items-center justify-center border border-dark-line rounded-lg text-tlight relative`}
   &:hover {
     cursor: pointer;
   }
@@ -25,6 +25,9 @@ const Item = styled.div`
 const Method = ({ icon, label, selected = false, onClick }) => {
   return (
     <Item selected={selected} onClick={onClick}>
+      {selected && (
+        <div tw="absolute top-2 right-2 w-3	h-3 rounded-full bg-primary" />
+      )}
       <div tw="mb-2">
         <SvgIcon component={icon} />
       </div>
@@ -53,7 +56,7 @@ const GroupPaymantMethod = () => {
         <Method
           icon={Wallet}
           label="Cash"
-          selected={index == 2}
+          selected={index === 2}
           onClick={() => set_index(2)}
         />
       </div>

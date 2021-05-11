@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 // eslint-disable-next-line
 import tw, { styled } from "twin.macro";
-import { Title, H2, H1, Body } from "components/Typography";
+import { Title, H1, Body } from "components/Typography";
 import { Fragment } from "react";
 import { Button } from "@material-ui/core";
 import { Grid3Cols } from "components/GridCustomCols";
@@ -39,7 +39,7 @@ export const Orders = ({ onContinueToPay = () => {} }) => {
     <Base
       header={
         <>
-          <H2>Orders #34562</H2>
+          <H1>Orders #34562</H1>
           <div tw="mt-7 inline-flex space-x-4">
             <Button color="primary" variant="contained">
               Dine In

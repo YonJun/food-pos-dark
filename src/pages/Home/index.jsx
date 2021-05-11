@@ -32,7 +32,7 @@ const DrawerContent = styled.div`
 `;
 
 const Home = () => {
-  const [isOpen, set_isOpen] = useState(false);
+  const [isOpen, set_isOpen] = useState(true);
 
   const toggleDrawer = (event) => {
     if (

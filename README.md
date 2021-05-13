@@ -1,4 +1,4 @@
-# Fod POS dark
+# Food POS dark
 
 ## Stack
 
